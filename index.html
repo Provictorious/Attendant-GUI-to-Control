@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <title>Attendant GUI</title>
+
+</head> 
+
+<body>
+  <div class="full">
+    <div class="container flex">
+        <div class="column big-display flex flex-col justify-between" style="width: 40%;" >
+            <div class="row cell-1">
+                <h2>Column 1 - Row 1</h2>
+                <p>Content goes here.</p>
+            </div>
+            <div class="row flex">
+                <div class="h-5 w-full bg-gray  m-5">
+                    <form id="coordinatesForm">
+                        <label for="latitude">Latitude:</label>
+                        <input type="number" step="any" id="latitude" name="latitude" required>
+                       
+                        <label for="longitude">Longitude:</label>
+                        <input type="number" step="any" id="longitude" name="longitude" required>
+                        <label for="cmt">Comments:</label>
+                         <input type="text" step="any" id="cmt" name="cmt" required>
+                        <button type="submit">Save</button>
+                      </form>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="column" style="width: 35%;"> 
+            <div class="row h-65" >
+                <!--Column 2 - Row 1
+                <p>Content goes here.
+                <h1>Coordinates List</h1>--->
+
+ 
+
+                <h2>Saved Coordinates</h2>
+                <table id="coordinatesTable">
+                  <thead>
+                    <tr>
+                      <th>Latitude</th>
+                      <th>Longitude</th>
+                      <th>Comments</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Saved coordinates will be added here -->
+                  </tbody>
+                </table>
+              
+                <script>
+                  document.getElementById("coordinatesForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+              
+                    // Get latitude and longitude values
+                    var latitude = parseFloat(document.getElementById("latitude").value);
+                    var longitude = parseFloat(document.getElementById("longitude").value);
+                    var cmt = document.getElementById("cmt").value;
+                    // Create table row with coordinates
+                    var tableRow = document.createElement("tr");
+                    var latitudeCell = document.createElement("td");
+                    latitudeCell.textContent = latitude;
+                    var longitudeCell = document.createElement("td");
+                    longitudeCell.textContent = longitude;
+                    var cmtCell = document.createElement("td");
+                    cmtCell.textContent = cmt;
+                    var actionsCell = document.createElement("td");
+                    var deleteButton = document.createElement("span");
+                    deleteButton.className = "delete-button";
+                    deleteButton.textContent = "❌";
+                    actionsCell.appendChild(deleteButton);
+                    tableRow.appendChild(latitudeCell);
+                    tableRow.appendChild(longitudeCell);
+                    tableRow.appendChild(cmtCell);
+                    tableRow.appendChild(actionsCell);
+              
+                    // Append table row to the coordinates table
+                    var coordinatesTable = document.getElementById("coordinatesTable").getElementsByTagName("tbody")[0];
+                    coordinatesTable.appendChild(tableRow);
+              
+                    // Clear input values
+                    document.getElementById("latitude").value = "";
+                    document.getElementById("longitude").value = "";
+                    document.getElementById("cmt").value = "";
+              
+                    // Add delete event listener to the delete button
+                    deleteButton.addEventListener("click", function() {
+                      tableRow.remove();
+                    });
+                  });
+                </script>
+            </div>
+            <div class="row h-35">
+                <h2>Rover Status</h2>
+                <p>Battery:</p>
+                <p>Temp:</p>
+                <p>Cooling:</p>
+            </div>
+        </div>
+
+        <div class="column" style="width: 25%;">
+            <div class="row h-50">
+                <h2>Control Axis</h2>
+                <p>Axis:<form oninput="x.value=parseInt(a.value)">
+                    <input type="range" id="a" min="-100" max="100">
+                    <output name="x" for="a"></output>
+                    </form>
+                    
+                    <form oninput="x.value=parseInt(a.value)">
+                        <input type="range" id="a" min="-100" max="100">
+                        <output name="x" for="a"></output>
+                        </form>
+                        
+                    <form oninput="x.value=parseInt(a.value)">
+                            <input type="range" id="a" min="-100" max="100">
+                            <output name="x" for="a"></output>
+                            </form>
+                            
+                    <form oninput="x.value=parseInt(a.value)">
+                                <input type="range" id="a" min="-100" max="100">
+                                <output name="x" for="a"></output>
+                                </form>
+ </p>
+                                <button type="button" style="background-color:red;">A</button>
+                                <button type="button" style="background-color:green;">B</button>
+                                <button type="button" style="background-color:blue;">C</button>
+                                <button type="button" style="background-color:yellow;">D</button>
+                                <button type="button" style="background-color:cyan;">E</button>
+                                <button type="button" style="background-color:orange;">F</button><br><br>
+                                <button type="button" style="background-color:white;">G</button>
+                                <button type="button" style="background-color:pink;">H</button>
+                                <button type="button" style="background-color:brown;">I</button>
+                                <button type="button" style="background-color:magenta;">J</button>
+                                <button type="button" style="background-color:red;">K</button>
+                                <button type="button" style="background-color:maroon;">L</button>
+            </div>
+            <div class="row h-25">
+                <h2>Column 3 - Row 2</h2>
+                <p>Content goes here.</p>
+            </div>
+            <div class="row h-20">
+                <h2>Camera</h2>
+                <p>Pan:</p>
+                <p>Tilt:</p>
+                
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>
