@@ -1,15 +1,12 @@
     body {
         margin: 10;
         padding: 0;
+        background-color: aqua;
         background-image: url('/Attendant-GUI-to-Control/bg.jpg');
         backdrop-filter: blur(4px);
 
     }
-    .full{
-        width: 100%;
-    }
-
-
+    
     .column {
         padding: 2px;
     }
