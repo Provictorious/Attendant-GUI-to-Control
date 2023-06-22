@@ -9,22 +9,26 @@
 </head> 
 
 <body>
-  <div class="full">
+
     <div class="container flex">
         <div class="column big-display flex flex-col justify-between" style="width: 60%;" >
             <div class="row cell-1">
-                <h2>Column 1 - Row 1</h2>
-                <p>Content goes here.</p>
-            </div>
+                <img src="/Attendant-GUI-to-Control/bak_map.jpg" id="myImg" alt="Rover" style="width:100%;height:100%;">
+                <div class="zoom-buttons">
+                  <button onclick="zoomIn()">Zoom In</button>
+                  <button onclick="zoomOut()">Zoom Out</button>
+                </div>
+    
+              </div>
             <div class="row flex">
                 <div class="h-5 w-full bg-gray  m-5">
                     <form id="coordinatesForm">
                         <label for="latitude">Latitude:</label>
                         <input type="number" step="any" id="latitude" name="latitude" required>
                        
-                        <label for="longitude">Longitude:</label>
+                        <label for="longitude" >Longitude:</label>
                         <input type="number" step="any" id="longitude" name="longitude" required>
-                        <label for="cmt">Comments:</label>
+                       <br> <label for="cmt"><br>Comments:</label>
                          <input type="text" step="any" id="cmt" name="cmt" required>
                         <button type="submit">Save</button>
                       </form>
@@ -35,20 +39,15 @@
 
         <div class="column" style="width: 35%;"> 
             <div class="row h-65" >
-                <!--Column 2 - Row 1
-                <p>Content goes here.
-                <h1>Coordinates List</h1>--->
-
- 
-
+          
                 <h2>Saved Coordinates</h2>
                 <table id="coordinatesTable">
                   <thead>
                     <tr>
-                      <th>Latitude</th>
+                      <th >Latitude</th>
                       <th>Longitude</th>
-                      <th>Comments</th>
-                      <th>Actions</th>
+                      <th colspan="2" style="column-width: 100px;">Comments</th>
+                     
                     </tr>
                   </thead>
                   <tbody>
@@ -100,9 +99,24 @@
             </div>
             <div class="row h-35">
                 <h2>Rover Status</h2>
-                <p>Battery:</p>
-                <p>Temp:</p>
-                <p>Cooling:</p>
+                <p>Battery  <output name="x" style="display: inline-block;
+                  width: 59px;
+                  height: 18.5px;
+                  border: 1px solid #0a0a0a;
+                  padding: 6px;
+                  box-sizing: border-box;"></output></p>
+                <p>Temp  <output name="x" style="display: inline-block;
+                  width: 59px;
+                  height: 18.5px;
+                  border: 1px solid #0a0a0a;
+                  padding: 6px;
+                  box-sizing: border-box;"></output></p>
+                <p>Cooling  <output name="x" style="display: inline-block;
+                  width: 59px;
+                  height: 18.5px;
+                  border: 1px solid #0a0a0a;
+                  padding: 6px;
+                  box-sizing: border-box;"></output></p>
             </div>
         </div>
 
@@ -148,13 +162,23 @@
             </div>
             <div class="row h-20">
                 <h2>Camera</h2>
-                <p>Pan:</p>
-                <p>Tilt:</p>
+                <p>Pan  <output name="x" style="display: inline-block;
+                  width: 59px;
+                  height: 18.5px;
+                  border: 1px solid #0a0a0a;
+                  padding: 6px;
+                  box-sizing: border-box;"></output></p>
+                <p>Tilt    <output name="x" style="display: inline-block;
+                  width: 59px;
+                  height: 18.5px;
+                  border: 1px solid #0a0a0a;
+                  padding: 6px;
+                  box-sizing: border-box;"></output></p>
                 
             </div>
         </div>
     </div>
-  </div>
+<script src="script.js"></script>  
 </body>
 
 </html>
