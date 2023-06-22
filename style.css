@@ -93,8 +93,8 @@
       
       .zoom-buttons {
         position: absolute;
-        top: 10px; /* Adjust the top position as desired */
-        right: 10px; /* Adjust the right position as desired */
+        top: 475px; /* Adjust the top position as desired */
+        right: 50px; /* Adjust the right position as desired */
       }
       
       .zoom-buttons button {
